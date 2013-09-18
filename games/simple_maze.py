@@ -64,16 +64,21 @@ class SimpleMaze(object):
                     break
 
         self._move_count = 0
-        self._position = [1, 1]
+        # Goal is currently in the bottom left corner
+        self._goal = [rows, cols]
+        self._start = [1, 1]
+        self._position = self._start
         self.results = None
 
     @property
     def player_config(self):
         return [
             {
-                'maze' : self._maze,
-                'cols' : self._cols,
-                'rows' : self._rows
+                'maze'  : self._maze,
+                'cols'  : self._cols,
+                'rows'  : self._rows,
+                'goal'  : self._goal,
+                'start' : self._start
             }
         ]
 
@@ -84,6 +89,7 @@ class SimpleMaze(object):
                 'maze' : self._maze,
                 'cols' : self._cols,
                 'rows' : self._rows,
+                'goal' : self._goal,
                 'position' : self._position
             }
         ]
