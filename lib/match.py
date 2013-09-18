@@ -37,7 +37,7 @@ class LocalMatch(object):
     def start(self):
         self.game = self._game_class(len(self._agent_classes), **self._config)
         agent_configs = self.game.player_config
-        self.agents = [ self._agent_classes[i](agent_configs[i])
+        self.agents = [ self._agent_classes[i](**agent_configs[i])
                         for i in range(len(self._agent_classes)) ]
 
     def step(self):

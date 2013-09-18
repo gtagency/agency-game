@@ -24,7 +24,7 @@ import random
 
 class RandomAgent(object):
 
-    def __init__(self, config):
+    def __init__(self, **kw):
         pass
 
     def select_move(self, state, valid_moves):
